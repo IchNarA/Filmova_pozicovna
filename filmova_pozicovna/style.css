@@ -1,0 +1,498 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+    list-style: none;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eeeff1;
+    padding: 30px 100px;
+}
+
+.navbar {
+    display: flex;
+    margin-right: -15px; 
+}
+
+.navbar li {
+    position: relative;
+    margin-right: 15px; 
+}
+
+.navbar a {
+    font-size: 1rem;
+    color:cornflowerblue;
+    font-weight: 500;
+    text-decoration: none; 
+    padding: 10px; 
+}
+
+.navbar a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: greenyellow;
+    position: absolute;
+    bottom: -4px;
+    left: 50%; 
+    transition: 0.5s;
+    transform: translateX(-50%);
+}
+
+.navbar li:hover a::after {
+    width: 100%;
+}
+
+.titulne_obrazky {
+    width: 100%;
+    height: 800px; 
+    background-color: black; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+}
+
+.titulne_obrazky img {
+    width: 100%; 
+    height: auto; 
+}
+
+span.prev,span.next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+span.prev {
+    left: 20px;
+}
+
+span.next {
+    right: 20px;
+}
+
+span.nextZoznam,span.prevZoznam{
+    position: absolute;
+    top: 120%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    
+}
+
+span.nextZoznam{
+    right: 2px;
+}
+
+span.prevZoznam{
+    left:2px;
+}
+
+.obrazky-container {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.text-top-left,
+.text-bottom-right {
+    position: absolute;
+    color: white; 
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 black, 3px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
+.text-top-left {
+    top: 20px;
+    left: 10px;
+    padding: 75px 20px;
+}
+
+.text-bottom-right {
+    bottom: 10px;
+    right: 10px;
+}
+
+
+.Zoznam_pozicanych {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-top: 5px;
+    position: relative;
+    z-index:2;
+}
+
+.Zoznam_pozicanych th, .Zoznam_pozicanych td {
+    border: 1px solid #dddddd; 
+    padding: 8px;
+    text-align: left;
+}
+
+.Zoznam_pozicanych th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.Zoznam_pozicanych_tabulka{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    position: relative;
+    z-index:1;
+    text-align: center;
+}
+
+.delete-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.center-content {
+    text-align: center;
+}
+
+.back-button {
+    margin-right: 10px;
+}
+
+
+.strankovanie {
+    text-align: left;
+    margin-top: 25px; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+}
+
+.sipka2 {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 20px;
+    background-color: red;
+}
+
+
+.sipka {
+    padding: 10px 20px; 
+    border: 1px solid #ccc;
+    text-decoration: none;
+    margin: 0 5px; 
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+
+
+.sipka:hover {
+    background-color: #f0f0f0; 
+}
+
+.sipka2:hover {
+    background-color: #f0f0f0; 
+}
+
+
+
+
+.vyhladavanie_sekcia{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 10px;
+    margin-top: 20px;
+}
+
+#vyhladavanie{
+    width: 250px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+#vyhladavanieButton {
+    padding: 15px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+
+#vyhladavanieButton:hover{
+    background-color: greenyellow;
+}
+
+#pridatButton {
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-left: 1400px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+
+#pridatButton:hover{
+    background-color:greenyellow; 
+}
+
+
+.edit-button, .delete-button,.pozicat-button {
+    padding: 15px 50px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    cursor: pointer;
+    display: inline;
+}
+.pozicat-button:hover{
+    background-color: yellow;
+}
+
+.edit-button{
+    border-color: black;
+}
+
+.edit-button:hover{
+    background-color:#535151;
+}
+
+
+.back-button{
+    width:10%;
+}
+
+.delete-button{
+    border-color: red;
+}
+
+.delete-button:hover{
+    background-color: red;
+}
+
+.film a{
+    text-decoration: none;
+}
+
+.Pozadie{
+    position:relative;
+    width: 100%;
+    height: 100%;
+}
+
+.Rozmazane_pozadie {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1000px;
+    object-fit: cover;
+    filter: blur(10px);
+}
+
+
+
+.Filmy {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    margin-top: 100px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+
+
+.zoznam_obrazky {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 30px; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    padding:10px;
+}
+
+.film {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.film img {
+    width: 200px;
+    height: 300px;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nazov_filmu {
+    margin-top: 5px;
+    color: blue;
+    font-weight: bold;
+    height: 50px;
+}
+
+.film p{
+    
+    overflow: hidden;
+}
+
+.popis_filmu{
+    height: 150px;
+    font-size: 20px;
+    padding: 5px 40px;
+}
+
+.zanre_filmu{
+    font-size:20px;
+    margin-bottom: 30px;
+}
+
+
+
+.column {
+    margin-top:160px;
+    margin-left:850px;
+    background-color: #efefee;
+    min-height: 300px;
+    max-height: 100%;
+    width: 450px;
+    box-shadow: rgba(0,0,0, 0.1) 0 1px 2px;
+    padding: 20px 35px;
+    overflow-y: auto;
+}
+
+.column img{
+    width:30%;
+}
+
+.column form {
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+}
+
+.column form input[type="text"],input[type="number"],input[type="date"]{
+    padding:10px;
+    font-size: 14px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid #dedede;
+}
+
+.column form select{
+    padding:10px;
+    font-size: 14px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid #dedede;
+}
+
+.column form input[type="submit"] {
+    background-color: #4285f4;
+    color: #fff;
+    height: 36px;
+    width: 88px;
+    border: none;
+    border-radius: 3px;
+    font-weight: 500;
+    margin-top: 55px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.column form label{
+    margin-top: 15px;
+}
+
+.column .header {
+    padding: 20px 0;
+}
+
+.column h3 {
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 32px;
+    margin: 0;
+    padding-top: 16px;
+    color: #000;
+    font-weight: bold;
+}
+
+.column .checkbox-container {
+    margin-bottom: 10px;
+}
+
+.column .checkbox-group {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.column .checkbox-group label {
+    width: calc(33.33% - 10px); 
+    box-sizing: border-box;
+    padding: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.edit_btn,.delete_btn{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
